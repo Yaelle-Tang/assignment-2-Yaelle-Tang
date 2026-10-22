@@ -1,1 +1,310 @@
 /* Paste your Assignment 1 styles.css here. Keep the icons in src/assets/ so url(assets/...) paths keep working. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: black;
+  font-size: 14px;
+  font-family: roboto, sans-serif;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+}
+
+/* ========== HEADER STYLES ========== */
+header {
+  grid-column: span 2;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 20px;
+  background-color: #dc4c3e;
+  color: #ffffff;
+}
+
+.btn-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.btn-menu img {
+  width: 20px;
+  height: 20px;
+}
+
+.search-form {
+  display: flex;
+  flex: 1;
+  max-width: 400px;
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 4px;
+  padding: 8px 12px;
+  gap: 8px;
+}
+
+.search-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.task-counter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.check-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #dc4c3e;
+  padding: 2px;
+}
+
+nav {
+  grid-column: 1;
+}
+
+/* ========== sidebar styles ========== */
+
+nav {
+  background-color: #fefbf2;
+  color: #000;
+  padding-top: 30px;
+}
+
+.nav-list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
+.task {
+  display: flex;
+  flex-direction: row;
+  row-gap: 8px;
+  margin: 5px 20px;
+  align-items: center;
+}
+
+.task-name {
+  font-weight: 500;
+  font-size: 14px;
+  color: #000;
+}
+
+.task-name:hover {
+  color: #000;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.task-count {
+  color: #000;
+  font-size: 12px;
+  margin-left: 8px;
+}
+
+.task-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.task-form {
+  display: flex;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.task-form button {
+  background-color: #dc4c3e;
+  border: none;
+  font-family: roboto, sans-serif;
+  padding: 10px 16px;
+  border-radius: 5px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.task-form input {
+  flex: 1;
+  max-width: 400px;
+  padding: 10px;
+  border: 1px solid #c4c4c4;
+  border-radius: 5px;
+  font-family: roboto, sans-serif;
+  font-size: 14px;
+}
+
+.task-form input:focus {
+  outline: none;
+  border-color: #dc4c3e;
+}
+
+.task-form button:hover {
+  background-color: #c4412f;
+}
+
+.task-form button:active {
+  background-color: #a83527;
+}
+/* ======= Main Content Styles ======= */
+
+.main {
+  padding-top: 30px;
+  padding-left: 20px;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+.task-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 16px 0 0;
+}
+
+.task-items {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 0;
+  font-size: 14px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.task-items.completed label {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.task-checkbox {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  border: 2px solid #c4c4c4;
+  border-radius: 50%;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.task-checkbox:checked {
+  background-color: #dc4c3e;
+  border-color: #dc4c3e;
+}
+.task-checkbox:hover {
+  border-color: #dc4c3e;
+}
+
+.task-items label {
+  cursor: pointer;
+}
+.btn-delete {
+  margin-left: auto;
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #999;
+  cursor: pointer;
+  padding: 0 8px;
+}
+
+.btn-delete:hover {
+  color: #dc4c3e;
+}
+
+.btn-delete:active {
+  color: #a83527;
+}
+
+.empty-state {
+  margin-top: 40px;
+  margin-left: 20px;
+  color: #999;
+}
+/* ========= Responsive Styles ========= */
+main {
+  grid-column: 2;
+}
+
+@media (max-width: 480px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  nav {
+    display: none;
+  }
+
+  header {
+    grid-column: 1;
+  }
+
+  main {
+    grid-column: 1;
+  }
+}
+/* filter */
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  color: #999;
+}
+
+.filter-btn {
+  background: none;
+  border: none;
+  font-family: roboto, sans-serif;
+  font-size: 14px;
+  color: #666;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 4px;
+}
+
+.filter-btn:hover {
+  color: #dc4c3e;
+}
+
+.filter-btn:active {
+  color: #a83527;
+}
+
+.filter-btn.active {
+  color: #dc4c3e;
+  font-weight: 700;
+}
